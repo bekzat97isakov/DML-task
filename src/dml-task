@@ -1,0 +1,33 @@
+select CustomerName,City from Customers;
+select distinct Country from Customers;
+select PostalCode from Customers;
+select * from Customers where Country like '%exico';
+select City, Address from Customers where CustomerID=1;
+select * from Customers where Country like '%ermany' or Country like '%pain';
+select Country, CustomerName from Customers order by Country and CustomerName desc;
+select * from Customers where Address=null;
+SELECT  min(Price) FROM Products;
+SELECT max(ProductID) FROM Products;
+select * from Customers where CustomerName like 'A%';
+select * from Customers where Country Like '%ermany' or Country like '%rance' or Country like '_K';
+SELECT * FROM Orders where OrderDate like '%6';
+
+select brand,model,price from cars;
+select count(brand) from cars;
+select * from cars where brand = 'Hyundai';
+select * from cars where color in ('Red' , 'Blue');
+select * from cars where year_of_issue between '2000' and '2010';
+select count(brand) from cars where brand = 'Chevrolet';
+select avg(year_of_issue) from cars;
+select * from cars where brand in ('Audi','Ford','Kia','Toyota');
+select * from cars where model like 'T%';
+select * from cars where model like '%e';
+select brand from  cars where brand like '_____';
+select sum(price) from cars where brand = 'Mercedes-Benz';
+select * from cars where price in((select max(price) from cars), (select min(price) from cars));
+select * from cars where brand not in ('Toyota');
+select * from cars order by price desc limit 10;
+select * from cars order by year_of_issue desc offset 5 limit 10;
+select * from cars where year_of_issue not between '1995' and '2005';
+select count(color) as color ,brand from cars group by brand,color order by color desc limit 1;
+
